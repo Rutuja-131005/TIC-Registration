@@ -3,9 +3,7 @@
 <div align="center">
   <h3>🎓 Tech Innovation Club (TIC) Membership Registration System</h3>
   <p><i>Empowering students to join the future of technology and innovation</i></p>
-  
-  [![GitHub stars](https://img.shields.io/github/stars/Rutuja-131005/TIC-Registration?style=social)](https://github.com/Rutuja-131005/TIC-Registration/stargazers)
-  [![GitHub forks](https://img.shields.io/github/forks/Rutuja-131005/TIC-Registration?style=social)](https://github.com/Rutuja-131005/TIC-Registration/network/members)
+
   
 </div>
 
