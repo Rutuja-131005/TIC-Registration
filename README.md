@@ -13,14 +13,8 @@
 
 - [Overview](#-overview)
 - [Features](#-features)
-- [Tech Stack](#-tech-stack)
 - [Project Structure](#-project-structure)
-- [Installation](#-installation)
-- [Usage](#-usage)
-- [Configuration](#-configuration)
-- [Screenshots](#-screenshots)
 - [Contributing](#-contributing)
-- [License](#-license)
 - [Contact](#-contact)
 
 ---
@@ -96,11 +90,10 @@ This project eliminates the need for manual data entry and provides an intuitive
 | ![CSS3](https://img.shields.io/badge/CSS3-%231572B6.svg?style=flat&logo=css3&logoColor=white) | Styling & Animations |
 | ![JavaScript](https://img.shields.io/badge/JavaScript-%23F7DF1E.svg?style=flat&logo=javascript&logoColor=black) | Client-side Logic |
 
-### Backend & Storage
+### Storage
 | Technology | Purpose |
 |-----------|----------|
-| ![Google Sheets](https://img.shields.io/badge/Google%20Sheets-%2334A853.svg?style=flat&logo=google-sheets&logoColor=white) | Database |
-| ![Apps Script](https://img.shields.io/badge/Apps%20Script-%234285F4.svg?style=flat&logo=google&logoColor=white) | Backend API |
+| ![Google Sheets](https://docs.google.com/spreadsheets/d/1MGPv5QmdI9alH-ffxjLNmexQr3BYztK23fpQx4hEygE/edit?usp=sharing) | Database |
 
 ### Design
 - **Custom CSS Variables** for theming
@@ -144,105 +137,6 @@ TIC-Registration/
 - Admin authentication
 - CSV export functionality
 - In-memory session management
-
----
-
-## 🚀 Installation
-
-### Prerequisites
-- A modern web browser (Chrome, Firefox, Safari, Edge)
-- Google account (for Google Sheets integration)
-- Text editor (VS Code, Sublime Text, etc.)
-
-### Step 1: Clone the Repository
-
-```bash
-git clone https://github.com/Rutuja-131005/TIC-Registration.git
-cd TIC-Registration
-```
-
-### Step 2: Set Up Google Sheets Integration
-
-1. **Create a Google Spreadsheet**
-   - Open [Google Sheets](https://sheets.google.com)
-   - Create a new spreadsheet named "TIC Registrations"
-   - Add headers: `Name | Email | Phone | Department | Motivation | Positions | Timestamp`
-
-2. **Create Apps Script**
-   - In Google Sheets: `Extensions > Apps Script`
-   - Paste the following code:
-
-```javascript
-function doPost(e) {
-  try {
-    const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-    const data = JSON.parse(e.postData.contents);
-    
-    sheet.appendRow([
-      data.name,
-      data.email,
-      data.phone,
-      data.department,
-      data.motivation,
-      data.positions.join(', '),
-      new Date().toISOString()
-    ]);
-    
-    return ContentService.createTextOutput(JSON.stringify({
-      success: true
-    })).setMimeType(ContentService.MimeType.JSON);
-  } catch(error) {
-    return ContentService.createTextOutput(JSON.stringify({
-      success: false,
-      error: error.toString()
-    })).setMimeType(ContentService.MimeType.JSON);
-  }
-}
-
-function doGet(e) {
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-  const data = sheet.getDataRange().getValues();
-  
-  const registrations = data.slice(1).map(row => ({
-    name: row[0],
-    email: row[1],
-    phone: row[2],
-    department: row[3],
-    motivation: row[4],
-    positions: row[5].split(', '),
-    timestamp: row[6]
-  }));
-  
-  return ContentService.createTextOutput(JSON.stringify({
-    success: true,
-    registrations: registrations
-  })).setMimeType(ContentService.MimeType.JSON);
-}
-```
-
-3. **Deploy as Web App**
-   - Click `Deploy > New deployment`
-   - Select `Web app`
-   - Set "Execute as": Me
-   - Set "Who has access": Anyone
-   - Copy the **Web app URL**
-
-4. **Update app.js**
-   - Replace the URL in `fetch()` calls with your Apps Script URL
-
-### Step 3: Run the Application
-
-```bash
-# Option 1: Open directly
-open index.html
-
-# Option 2: Use a local server
-python -m http.server 8000
-# Then open: http://localhost:8000
-
-# Option 3: Use Live Server (VS Code extension)
-# Right-click index.html > Open with Live Server
-```
 
 ---
 
@@ -295,42 +189,6 @@ const ADMIN_CREDENTIALS = {
 };
 ```
 
-⚠️ **Security Note**: For production, implement proper backend authentication with hashed passwords.
-
-### Customization
-
-**Change Color Theme** (`style.css`):
-```css
-:root {
-  --neon-blue: #00d9ff;      /* Primary color */
-  --neon-cyan: #00ffff;      /* Accent color */
-  --neon-purple: #b300ff;    /* Highlight color */
-}
-```
-
-**Modify Position Options** (`index.html`):
-```html
-<label class="checkbox-label">
-  <input type="checkbox" name="positions" value="Your Position">
-  <span class="checkbox-text">Your Position</span>
-</label>
-```
-
----
-
-## 📸 Screenshots
-
-### Registration Form
-![Registration Form](https://via.placeholder.com/800x450.png?text=Registration+Form+Screenshot)
-
-### Success Message
-![Success Message](https://via.placeholder.com/800x450.png?text=Success+Message+Screenshot)
-
-### Admin Dashboard
-![Admin Dashboard](https://via.placeholder.com/800x450.png?text=Admin+Dashboard+Screenshot)
-
----
-
 ## 🤝 Contributing
 
 Contributions are welcome! Here's how you can help:
@@ -369,17 +227,10 @@ Please open an issue with:
 
 ---
 
-## 📝 License
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
----
-
 ## 📞 Contact
 
 **Tech Innovation Club (TIC)**
 
-- 📧 Email: tic@yourschool.edu
 - 💬 WhatsApp: [Join Our Group](https://chat.whatsapp.com/GXNT7RgNoDHC8wyuxfQg75)
 - 📸 Instagram: [@tic.nextgen](https://www.instagram.com/tic.nextgen)
 - 🌐 Website: [Coming Soon]
