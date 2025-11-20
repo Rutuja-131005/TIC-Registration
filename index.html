@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIC Registration</title>
+    <link rel="icon" href="assets/logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="image-background">
+        <div class="animated-gradient"></div>
+        <div class="poly-overlay"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Registration Form -->
+        <div id="registrationSection" class="form-container">
+            <div class="form-glass">
+                <div class="form-header">
+                    <h1 class="neon-title">TIC Application</h1>
+                    <p class="subtitle">Tech Innovation Club - Join Us!</p>
+                </div>
+
+                <form id="registrationForm">
+                    <!-- Personal Information Section -->
+                    <div class="form-section">
+                        <h3 class="section-title">Personal Information</h3>
+
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" class="form-control neon-input"
+                                placeholder="First and last name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" class="form-control neon-input"
+                                placeholder="your@email.com" required>
+                            <span class="error-message" id="emailError" style="color:red;display:none;">Please enter a
+                                valid email address</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone number <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="phone" class="form-control neon-input"
+                                placeholder="91 XXXXXXXXXX" required pattern="[0-9]{10}">
+                            <span class="error-message" id="phoneError" style="color:red;display:none;">Phone number
+                                must be 10 digits</span>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="department" class="form-label">Department <span
+                                    class="required">*</span></label>
+                            <input type="text" id="department" name="department" class="form-control neon-input"
+                                placeholder="Your Department/Stream" required>
+                        </div>
+                    </div>
+
+                    <!-- Motivation Section -->
+                    <div class="form-section">
+                        <h3 class="section-title">Motivation</h3>
+
+                        <div class="form-group">
+                            <label for="motivation" class="form-label">Why do you want to join TIC Club? <span
+                                    class="required">*</span></label>
+                            <textarea id="motivation" name="motivation" class="form-control neon-input" rows="5"
+                                placeholder="Tell us about your interest..." required></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Position Selection Section -->
+                    <div class="form-section">
+                        <h3 class="section-title">Position of Interest</h3>
+
+                        <div class="form-group">
+                            <label class="form-label">Which position(s) are you interested in?* <span
+                                    class="help-text">(Select at most 2)</span></label>
+                            <p class="help-message">You can select up to 2 positions</p>
+                            <div id="positionError" class="position-error" style="display: none;"></div>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="positions" value="Admin" class="neon-checkbox">
+                                    <span class="checkbox-text">Admin</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="positions" value="Treasurer" class="neon-checkbox">
+                                    <span class="checkbox-text">Treasurer</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="positions" value="Technical Coordinator"
+                                        class="neon-checkbox">
+                                    <span class="checkbox-text">Technical Coordinator</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="positions" value="Research Coordinator"
+                                        class="neon-checkbox">
+                                    <span class="checkbox-text">Research Coordinator</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="positions" value="Social Media Coordinator"
+                                        class="neon-checkbox">
+                                    <span class="checkbox-text">Social Media Coordinator</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="positions"
+                                        value="Public Relations & Outreach Coordinator" class="neon-checkbox">
+                                    <span class="checkbox-text">Public Relations &amp; Outreach Coordinator</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="positions" value="Event Management Coordinator"
+                                        class="neon-checkbox">
+                                    <span class="checkbox-text">Event Management Coordinator</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-submit neon-button">
+                        <span class="button-text">Submit </span>
+                        <span class="button-glow"></span>
+                    </button>
+                </form>
+
+                <div class="form-footer">
+                    <p class="attribution">join us on-</p>
+                    <p class="attribution">
+                        <a href="https://chat.whatsapp.com/GXNT7RgNoDHC8wyuxfQg75?mode=wwt">
+                            <i class="fa fa-whatsapp" style="font-size:36px">
+                            </i>
+                        </a>
+                        <a href="https://www.instagram.com/tic.nextgen/#">
+                            <i class="fa fa-instagram" style="font-size:36px">
+                            </i>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success Message -->
+        <div id="successMessage" class="success-container" style="display: none;">
+            <div class="success-card">
+                <div class="success-icon">✓</div>
+                <h2 class="success-title">Application Submitted!</h2>
+                <p class="success-text">Thank you for applying to TIC Club.</p>
+                <!-- <p class="success-subtext">You will receive a confirmation email shortly.</p> -->
+                <button id="backBtn" class="btn-back neon-button">Register Another</button>
+
+                <div class="form-footer">
+                    <p class="attribution">join us on-</p>
+                    <p class="attribution">
+                        <a href="https://chat.whatsapp.com/GXNT7RgNoDHC8wyuxfQg75?mode=wwt">
+                            <i class="fa fa-whatsapp" style="font-size:36px">
+                            </i>
+                        </a>
+                        <a href="https://www.instagram.com/tic.nextgen/#">
+                            <i class="fa fa-instagram" style="font-size:36px">
+                            </i>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Admin Login -->
+        <div id="adminLogin" class="admin-login-container" style="display: none;">
+            <div class="admin-login-glass">
+                <div class="login-header">
+                    <h2 class="neon-title">Admin Login</h2>
+                    <p class="subtitle">Secure Access Only</p>
+                </div>
+
+                <form id="adminLoginForm">
+                    <div class="form-group">
+                        <label for="adminEmail" class="form-label">Email</label>
+                        <input type="email" id="adminEmail" class="form-control neon-input"
+                            placeholder="admin@ticclub.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adminPassword" class="form-label">Password</label>
+                        <input type="password" id="adminPassword" class="form-control neon-input"
+                            placeholder="Enter password" required>
+                    </div>
+
+                    <div id="loginError" class="error-message" style="display: none;"></div>
+
+                    <button type="submit" class="btn-submit neon-button">
+                        <span class="button-text">Login</span>
+                    </button>
+                </form>
+
+                <button id="backToFormBtn" class="back-link">Back to Registration</button>
+            </div>
+        </div>
+
+        <!-- Admin Panel -->
+        <div id="adminPanel" class="admin-container" style="display: none;">
+            <div class="admin-glass">
+                <div class="admin-header">
+                    <div>
+                        <h2 class="neon-title">Admin Dashboard</h2>
+                        <p class="admin-email" id="adminEmailDisplay"></p>
+                    </div>
+                    <button id="logoutBtn" class="btn-logout neon-button-small">Logout</button>
+                </div>
+
+                <div class="admin-stats">
+                    <div class="stat-card">
+                        <div class="stat-value" id="totalRegistrations">0</div>
+                        <div class="stat-label">Total Registrations</div>
+                    </div>
+                </div>
+
+                <div class="admin-actions">
+                    <button id="downloadCSV" class="btn-download neon-button-small">Download CSV</button>
+                    <button id="refreshData" class="btn-refresh neon-button-small">Refresh Data</button>
+                </div>
+
+                <div class="table-container">
+                    <table id="registrationsTable" class="data-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Department</th>
+                                <th>Positions</th>
+                                <th>Timestamp</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <tr>
+                                <td colspan="7" class="no-data">No applications yet</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="admin-note">
+                    <p><strong>Note:</strong> In production, this data would be stored in MongoDB. Current
+                        implementation uses in-memory storage for demonstration.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
